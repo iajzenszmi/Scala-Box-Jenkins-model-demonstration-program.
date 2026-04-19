@@ -1,0 +1,143 @@
+ian@ian-PORTEGE-Z930:~$ ./setup2.sh
+[1/5] Installing system prerequisites...
+[sudo] password for ian:           
+Hit:1 https://brave-browser-apt-release.s3.brave.com stable InRelease
+Hit:2 http://au.archive.ubuntu.com/ubuntu noble InRelease                      
+Hit:3 http://au.archive.ubuntu.com/ubuntu noble-updates InRelease              
+Hit:4 http://au.archive.ubuntu.com/ubuntu noble-backports InRelease            
+Hit:5 http://security.ubuntu.com/ubuntu noble-security InRelease               
+Hit:6 https://packages.zorinos.com/stable noble InRelease                      
+Hit:7 https://packages.zorinos.com/patches noble InRelease                     
+Hit:8 https://packages.zorinos.com/apps noble InRelease
+Hit:9 https://packages.zorinos.com/drivers noble InRelease
+Hit:10 https://ppa.launchpadcontent.net/zorinos/apps/ubuntu noble InRelease
+Hit:11 https://ppa.launchpadcontent.net/zorinos/drivers/ubuntu noble InRelease
+Hit:12 https://ppa.launchpadcontent.net/zorinos/patches/ubuntu noble InRelease
+Hit:13 https://ppa.launchpadcontent.net/zorinos/stable/ubuntu noble InRelease
+Reading package lists... Done
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+curl is already the newest version (8.5.0-2ubuntu10.8).
+ca-certificates is already the newest version (20240203).
+bash is already the newest version (5.2.21-2ubuntu4).
+0 to upgrade, 0 to newly install, 0 to remove and 1 not to upgrade.
+[2/5] Installing Scala CLI if needed...
+[3/5] Creating project directory...
+[4/5] Writing corrected Scala source...
+[5/5] Running corrected Box-Jenkins demo...
+Starting compilation server
+=== Scala Box-Jenkins ARIMA Demo ===
+Total observations : 30
+Training size      : 24
+Test size          : 6
+
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Candidate models ranked by AIC:
+  ARIMA(1,1,1)  AIC = 101.6180
+  ARIMA(2,1,0)  AIC = 110.4679
+  ARIMA(0,1,2)  AIC = 112.9186
+  ARIMA(1,1,0)  AIC = 114.2630
+  ARIMA(0,1,1)  AIC = 117.4921
+  ARIMA(2,0,0)  AIC = 117.6000
+  ARIMA(0,1,0)  AIC = 120.3304
+  ARIMA(1,0,2)  AIC = 126.2873
+  ARIMA(1,0,1)  AIC = 131.0913
+  ARIMA(1,0,0)  AIC = 133.8977
+  ARIMA(0,0,2)  AIC = 169.5175
+  ARIMA(0,0,1)  AIC = 187.7106
+
+Selected model by minimum AIC: ARIMA(1,1,1)
+
+Forecast vs actual:
+Step	Forecast	Actual		AbsError
+1	183.6190		184.0000		0.3810
+2	186.2370		188.0000		1.7630
+3	188.8541		191.0000		2.1459
+4	191.4702		194.0000		2.5298
+5	194.0855		198.0000		3.9145
+6	196.6998		201.0000		4.3002
+
+Error metrics on held-out test set:
+  MAE  = 2.505747
+  RMSE = 2.830594
+  MAPE = 1.2815%
+
+Model summary:
+
+ARIMA (1, 1, 1) with no constant
+
+sigma2: 3.0106
+logLikelihood: -47.8090
+AIC: 101.6180
+
+autoregressive: 0.9996
+moving-average: -1.0405
+zero mean
+1 non-seasonal difference
+
+fit using conditional sum-of-squares, then maximum likelihood
+
+Done.
+Source file:
+  scala-box-jenkins-demo/BoxJenkinsDemo.scala
+
+To rerun later:
+  scala-cli run scala-box-jenkins-demo/BoxJenkinsDemo.scala
+ian@ian-PORTEGE-Z930:~$ scala-cli run scala-box-jenkins-demo/BoxJenkinsDemo.scala
+=== Scala Box-Jenkins ARIMA Demo ===
+Total observations : 30
+Training size      : 24
+Test size          : 6
+
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Candidate models ranked by AIC:
+  ARIMA(1,1,1)  AIC = 101.6180
+  ARIMA(2,1,0)  AIC = 110.4679
+  ARIMA(0,1,2)  AIC = 112.9186
+  ARIMA(1,1,0)  AIC = 114.2630
+  ARIMA(0,1,1)  AIC = 117.4921
+  ARIMA(2,0,0)  AIC = 117.6000
+  ARIMA(0,1,0)  AIC = 120.3304
+  ARIMA(1,0,2)  AIC = 126.2873
+  ARIMA(1,0,1)  AIC = 131.0913
+  ARIMA(1,0,0)  AIC = 133.8977
+  ARIMA(0,0,2)  AIC = 169.5175
+  ARIMA(0,0,1)  AIC = 187.7106
+
+Selected model by minimum AIC: ARIMA(1,1,1)
+
+Forecast vs actual:
+Step	Forecast	Actual		AbsError
+1	183.6190		184.0000		0.3810
+2	186.2370		188.0000		1.7630
+3	188.8541		191.0000		2.1459
+4	191.4702		194.0000		2.5298
+5	194.0855		198.0000		3.9145
+6	196.6998		201.0000		4.3002
+
+Error metrics on held-out test set:
+  MAE  = 2.505747
+  RMSE = 2.830594
+  MAPE = 1.2815%
+
+Model summary:
+
+ARIMA (1, 1, 1) with no constant
+
+sigma2: 3.0106
+logLikelihood: -47.8090
+AIC: 101.6180
+
+autoregressive: 0.9996
+moving-average: -1.0405
+zero mean
+1 non-seasonal difference
+
+fit using conditional sum-of-squares, then maximum likelihood
+ian@ian-PORTEGE-Z930:~$ 
+
